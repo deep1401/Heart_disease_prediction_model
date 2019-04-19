@@ -14,7 +14,7 @@ from xgboost import XGBRegressor
 my_model = XGBRegressor()
 my_model.fit(X,y,verbose=False)
 prediction = my_model.predict(n_data)
-output=pd.DataFrame({'patient_id':labels.patient_id,'heart_disease_present':prediction})
+output=pd.DataFrame({'patient_id':test_data.patient_id,'heart_disease_present':prediction})
 filename = 'Submission_deep1401.csv'
 
 output.to_csv(filename,index=False)
